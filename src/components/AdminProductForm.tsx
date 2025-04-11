@@ -252,7 +252,7 @@ const AdminProductForm: React.FC<AdminProductFormProps> = ({ product, onCancel, 
           <option value="">{t('admin.products.form.categoryPlaceholder')}</option>
           <option value="fertilizers">{t('products.categories.fertilizers')}</option>
           <option value="seeds">{t('products.categories.seeds')}</option>
-          <option value="Insecticide">{t('products.categories.Insecticide')}</option>
+          <option value="insecticide">{t('products.categories.insecticide')}</option>
           <option value="fungicide">{t('products.categories.fungicide')}</option>
         </select>
       </div>
