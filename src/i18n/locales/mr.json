@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "products": "उत्पादने",
+    "cart": "कार्ट",
+    "profile": "प्रोफाइल",
+    "admin": "प्रशासक"
+  },
+  "admin": {
+    "title": "प्रशासक डॅशबोर्ड",
+    "products": {
+      "title": "उत्पादन व्यवस्थापन",
+      "addNew": "नवीन उत्पादन जोडा",
+      "edit": "उत्पादन संपादित करा",
+      "list": "उत्पादन यादी",
+      "search": "उत्पादने शोधा...",
+      "originalPrice": "मूळ किंमत",
+      "discountedPrice": "सवलतीची किंमत",
+      "youSave": "आपण वाचवले",
+      "sort": {
+        "newest": "सर्वात नवीन",
+        "price": "किंमत",
+        "name": "नाव"
+      },
+      "fields": {
+        "name": "नाव",
+        "category": "श्रेणी",
+        "price": "किंमत",
+        "actions": "क्रिया",
+        "nameEn": "नाव (इंग्रजी)",
+        "nameMr": "नाव (मराठी)",
+        "descriptionEn": "वर्णन (इंग्रजी)",
+        "descriptionMr": "वर्णन (मराठी)",
+        "benefits": "फायदे"
+
+      },
+      "noProducts": "कोणतीही उत्पादने आढळली नाहीत.",
+      "form": {
+        "name": "उत्पादनाचे नाव",
+        "namePlaceholder": "उत्पादनाचे नाव प्रविष्ट करा",
+        "price": "किंमत",
+        "pricePlaceholder": "किंमत प्रविष्ट करा",
+        "category": "श्रेणी",
+        "categoryPlaceholder": "श्रेणी निवडा",
+        "image": "प्रतिमा URL",
+        "imagePlaceholder": "प्रतिमा URL प्रविष्ट करा",
+        "description": "वर्णन",
+        "descriptionPlaceholder": "उत्पादन वर्णन प्रविष्ट करा",
+        "benefits": "फायदे",
+        "benefitsPlaceholder": "फायदा प्रविष्ट करा",
+        "addBenefit": "फायदा जोडा",
+        "save": "उत्पादन जतन करा",
+        "cancel": "रद्द करा",
+        "benefitPlaceholderEn": "इंग्रजीत फायदा प्रविष्ट करा",
+        "benefitPlaceholderMr": "मराठीत फायदा प्रविष्ट करा",
+        "removeBenefit": "काढा"
+
+      },
+      "validation": {
+        "required": "हे क्षेत्र आवश्यक आहे",
+        "number": "संख्या असणे आवश्यक आहे",
+        "url": "वैध URL असणे आवश्यक आहे"
+      }
+    }
+  },
+  "products": {
+    "title": "कृषी उत्पादने",
+    "searchPlaceholder": "उत्पादने शोधा...",
+    "noProducts": "तुमच्या निकषांशी जुळणारी कोणतीही उत्पादने सापडली नाहीत",
+    "addToCart": "कार्टमध्ये जोडा",
+    "originalPrice": "मूळ किंमत",
+    "discountedPrice": "सवलतीची किंमत",
+    "youSave": "आपण वाचवले",
+    "loading": "उत्पादने लोड होत आहेत...",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "errorParse": "उत्पादन डेटावर प्रक्रिया करण्यात अयशस्वी. कृपया नंतर पुन्हा प्रयत्न करा.",
+    "errorLoad": "उत्पादने लोड करण्यात अयशस्वी. कृपया आपले कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.",
+    "noName": "नाव नसलेले उत्पादन",
+    "noDescription": "वर्णन उपलब्ध नाही.",
+    "loginToAdd": "ॲड करण्यासाठी लॉगिन करा",
+    "categories": {
+      "all": "सर्व श्रेणी",
+      "fertilizers": "खते",
+      "seeds": "बियाणे",
+      "equipment": "उपकरणे"
+    }
+  },
+  "productDetails": {
+    "addToCart": "कार्टमध्ये जोडा",
+    "quantity": "संख्या",
+    "inStock": "स्टॉक मध्ये उपलब्ध",
+    "category": "श्रेणी",
+    "price": "किंमत",
+    "description": "वर्णन",
+    "benefits": "फायदे"
+  },
+  "language": {
+    "select": "भाषा निवडा",
+    "en": "English",
+    "mr": "मराठी"
+  },
+  "cart": {
+    "title": "खरेदीची टोपली",
+    "empty": {
+      "title": "तुमची टोपली रिकामी आहे",
+      "subtitle": "खरेदीसाठी काही उत्पादने जोडा",
+      "continueShopping": "खरेदी सुरू ठेवा"
+    },
+    "removeItem": "उत्पादन काढा",
+    "total": "एकूण",
+    "proceedToCheckout": "चेकआउट करा",
+    "checkoutAlert": "चेकआउटची प्रक्रिया Stripe सह एकत्र केली जाईल"
+  }
+}

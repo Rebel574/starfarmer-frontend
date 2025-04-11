@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Recommended for Vite
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true, // Added: Allows importing JSON files
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true, // Added: Improves compatibility
+    "moduleDetection": "force", // Ensures files treated as modules
+    "noEmit": true, // Vite handles emitting files
+    "jsx": "react-jsx", // Modern JSX transform
+
+    /* Linting */
+    "strict": true, // Recommended for robust type checking
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
+    "baseUrl": ".", // Needed for paths mapping
+    "paths": {
+      "@/*": ["src/*"] // Defines '@/' as an alias for 'src/'
+    }
+  },
+  // Include source files and potentially config files for type checking
+  "include": ["src", ".eslintrc.cjs", "vite.config.ts"],
+  // Reference the config for Node-specific files like vite.config.ts
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "products": "Products",
+    "cart": "Cart",
+    "profile": "Profile",
+    "admin": "Admin"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "products": {
+      "title": "Product Management",
+      "addNew": "Add New Product",
+      "edit": "Edit Product",
+      "list": "Product List",
+      "search": "Search products...",
+      "originalPrice": "Original Price",
+      "discountedPrice": "Discounted Price",
+      "youSave": "You Save",
+      "sort": {
+        "newest": "Newest",
+        "price": "Price",
+        "name": "Name"
+      },
+      "fields": {
+        "name": "Name",
+        "category": "Category",
+        "price": "Price",
+        "actions": "Actions",
+        "nameEn": "Name (English)",
+        "nameMr": "Name (Marathi)",
+        "descriptionEn": "Description (English)",
+        "descriptionMr": "Description (Marathi)",
+        "benefits": "Benefits"
+
+      },
+      "noProducts": "No products found.",
+      "form": {
+        "name": "Product Name",
+        "namePlaceholder": "Enter product name",
+        "price": "Price",
+        "pricePlaceholder": "Enter price",
+        "category": "Category",
+        "categoryPlaceholder": "Select category",
+        "image": "Image URL",
+        "imagePlaceholder": "Enter image URL",
+        "description": "Description",
+        "descriptionPlaceholder": "Enter product description",
+        "benefits": "Benefits",
+        "benefitsPlaceholder": "Enter benefit",
+        "addBenefit": "Add Benefit",
+        "save": "Save Product",
+        "cancel": "Cancel",
+        "benefitPlaceholderEn": "Enter benefit in English",
+        "benefitPlaceholderMr": "Enter benefit in Marathi",
+        "removeBenefit": "Remove"
+
+      },
+      "validation": {
+        "required": "This field is required",
+        "number": "Must be a number",
+        "url": "Must be a valid URL"
+      }
+    }
+  },
+  "products": {
+    "title": "Agricultural Products",
+    "searchPlaceholder": "Search products...",
+    "noProducts": "No products found matching your criteria",
+    "addToCart": "Add to Cart",
+    "originalPrice": "Original Price",
+    "discountedPrice": "Discounted Price",
+    "youSave": "You Save",
+    "loading": "Loading products...",
+    "tryAgain": "Try Again",
+    "errorParse": "Failed to process product data. Please try again later.",
+    "errorLoad": "Failed to load products. Please check your connection and try again.",
+    "noName": "Unnamed Product",
+    "noDescription": "No description available.",
+    "loginToAdd": "Login to Add",
+    "categories": {
+      "all": "All Categories",
+      "fertilizers": "Fertilizers",
+      "seeds": "Seeds",
+      "equipment": "Equipment"
+    }
+  },
+  "productDetails": {
+    "addToCart": "Add to Cart",
+    "quantity": "Quantity",
+    "inStock": "In Stock",
+    "category": "Category",
+    "price": "Price",
+    "description": "Description",
+    "benefits": "Benefits"
+  },
+  "language": {
+    "select": "Select Language",
+    "en": "English",
+    "mr": "मराठी"
+  },
+  "cart": {
+  "title": "Shopping Cart",
+  "empty": {
+    "title": "Your cart is empty",
+    "subtitle": "Add some products to your cart to get started",
+    "continueShopping": "Continue Shopping"
+  },
+  "removeItem": "Remove item",
+  "total": "Total",
+  "proceedToCheckout": "Proceed to Checkout",
+  "checkoutAlert": "Checkout functionality would be integrated with Stripe here"
+  }
+}
