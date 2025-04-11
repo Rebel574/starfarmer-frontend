@@ -81,7 +81,8 @@
       "all": "All Categories",
       "fertilizers": "Fertilizers",
       "seeds": "Seeds",
-      "equipment": "Equipment"
+      "insecticide":"Insecticide",
+      "fungicide":"Fungicide"
     }
   },
   "productDetails": {
