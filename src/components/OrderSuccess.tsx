@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import axios, { AxiosError } from 'axios';
 import { CheckCircle, ShoppingBag, Truck, Calendar, AlertTriangle, ListOrdered, Package } from 'lucide-react'; // Added ListOrdered, Package
 import { getOrderDetails } from '../api/index'; 
+import placeholderImageSrc from '../assets/No-Image-Placeholder.svg';
 
 
 // Define the exact response structure from the API
@@ -260,10 +261,20 @@ export default function OrderSuccess(): JSX.Element {
                         <div key={item._id} className="flex py-5 space-x-4">
                             <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-gray-50">
                                 <img
-                                    src={item.productId?.image || '/'} 
+                                    src={item.productId?.image || placeholderImageSrc} 
                                     alt={productName}
                                     className="h-full w-full object-cover object-center"
-                                    onError={(e) => (e.currentTarget.src = '/placeholder-product.jpg')} // Handle broken images
+                                    onError={(e) => {
+                                      const currentTarget = e.currentTarget;
+                                      // Only set the placeholder if the failing source wasn't already the placeholder
+                                      if (currentTarget.src !== placeholderImageSrc) {
+                                        currentTarget.src = placeholderImageSrc;
+                                      } else {
+                                        // Optional: Log if the placeholder itself fails and prevent further attempts
+                                        // console.error('Imported placeholder image failed to load:', placeholderImageSrc);
+                                        currentTarget.onerror = null;
+                                      }
+                                    }} // Handle broken images
                                 />
                             </div>
                             <div className="flex flex-1 flex-col justify-between">
