@@ -127,6 +127,7 @@
     "confirmationEmailSent": "A confirmation email has been sent to your registered email address.",
     "orderDetails": "Order Details",
     "orderPlaced": "Order Placed",
+    "loadingOrder":"Loading Order",
     "status": {
       "payment_pending": "Payment Pending",
       "processing": "Processing",

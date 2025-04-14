@@ -83,7 +83,7 @@ export default function OrderSuccess(): JSX.Element {
           setOrder(response.data.data.order);
         } else {
           // Handle cases where API returns success status but no order data
-          throw new Error(t('orderSuccess.errors.notFoundSpecific', { orderId }));
+          throw new Error(t('orderSuccess.errors.notFound', { orderId }));
         }
       } catch (err: unknown) {
         console.error("Failed to load order:", err);
@@ -92,7 +92,7 @@ export default function OrderSuccess(): JSX.Element {
         if (axios.isAxiosError(err)) {
           const axiosError = err as AxiosError<{ message?: string }>;
           if (axiosError.response?.status === 404) {
-            message = t('orderSuccess.errors.notFoundSpecific', { orderId });
+            message = t('orderSuccess.errors.notFound', { orderId });
           } else {
             // Try to get a more specific message from the API response
             message = axiosError.response?.data?.message || axiosError.message || message;
@@ -211,14 +211,14 @@ export default function OrderSuccess(): JSX.Element {
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">{t('orderSuccess.title')}</h1>
         <p className="mt-3 text-lg text-gray-600">
-            {t('orderSuccess.thankYouPersonalized', { name: order.userId?.name || t('orderSuccess.customer') })} {/* Personalized if name exists */}
+            {t('orderSuccess.thankYou', { name: order.userId?.name || t('orderSuccess.customer') })} {/* Personalized if name exists */}
         </p>
         <p className="text-base text-gray-500 mt-4">
              {t('orderSuccess.orderNumber')}:{' '}
              <span className="font-semibold text-gray-700 bg-gray-100 px-2 py-1 rounded text-sm tracking-wider">{order._id}</span>
         </p>
         <p className="text-sm text-gray-500 mt-2">
-             {t('orderSuccess.confirmationEmailSentTo', { email: order.userId?.email || 'your email' })}
+             {t('orderSuccess.confirmationEmailSent', { email: order.userId?.email || 'your email' })}
         </p>
       </div>
 
@@ -247,7 +247,7 @@ export default function OrderSuccess(): JSX.Element {
                     order.status === 'cancelled' ? 'bg-red-100 text-red-800 border border-red-200' :
                     'bg-gray-100 text-gray-800 border border-gray-200' // Default/unknown status
                 }`}>
-                    {t(`orderStatus.${order.status}`, order.status)} {/* Assuming translations like orderStatus.processing */}
+                    {t(`orderSuccess.status.${order.status}`, order.status)} 
                 </div>
             </div>
 

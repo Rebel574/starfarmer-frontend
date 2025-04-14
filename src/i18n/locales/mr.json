@@ -127,6 +127,7 @@
     "confirmationEmailSent": "तुमच्या नोंदणीकृत ईमेल पत्त्यावर एक पुष्टीकरण ईमेल पाठविला आहे.",
     "orderDetails": "ऑर्डर तपशील",
     "orderPlaced": "ऑर्डर दिली",
+    "loadingOrder":"ऑर्डर लोड करत आहे",
     "status": {
       "payment_pending": "पेमेंट प्रलंबित",
       "processing": "प्रक्रिया करत आहे",
