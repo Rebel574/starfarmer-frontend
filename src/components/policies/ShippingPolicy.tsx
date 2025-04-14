@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
+
 const ShippingPolicy = () => {
-  const lastUpdated = 'April 14, 2025'; // Update this date
-  const processingTime = '1-3 business days'; // Example
-  const contactWithinDaysDamage = 3; // Example
+  const lastUpdated = 'April 14, 2025';
+  const processingTime = '1-3 business days';
+  const contactWithinDaysDamage = 3;
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <main className="bg-white text-gray-800 p-6 md:p-10 max-w-4xl mx-auto my-8 rounded-lg shadow-md">
@@ -45,9 +52,9 @@ const ShippingPolicy = () => {
           Once shipped, estimated delivery times are typically:
         </p>
          <ul className="list-disc list-inside mb-3 space-y-2 pl-4">
-            <li>Metro Cities: [Number, e.g., 2-5] business days</li>
-            <li>Tier II/III Cities: [Number, e.g., 4-7] business days</li>
-            <li>Remote Areas / Special Zones (e.g., Northeast, J&K): [Number, e.g., 7-12] business days</li>
+            <li>Metro Cities: 4-6 business days</li>
+            <li>Tier II/III Cities: 5-9 business days</li>
+            <li>Remote Areas / Special Zones (e.g., Northeast, J&K): 7-12 business days</li>
          </ul>
         <p className="mb-3">
           Please note that these are estimates only and actual delivery times may vary due to factors beyond our control, such as:
@@ -80,7 +87,7 @@ const ShippingPolicy = () => {
        <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">5. Order Tracking</h2>
         <p className="mb-3">
-          Once your order has shipped, you will receive an email notification from us which will include a tracking number you can use to check its status. Please allow [Number, e.g., 24-48] hours for the tracking information to become available on the carrier's website.
+          Once your order has shipped, you will receive an email notification from us which will include a tracking number you can use to check its status. Please allow 24-48 hours for the tracking information to become available on the carrier's website.
         </p>
         <p>
           You can track your order via the link provided in the email or directly on the courier partner's website using the tracking number.
@@ -103,7 +110,7 @@ const ShippingPolicy = () => {
           If your order arrives damaged, please refer to our Refund Policy. Contact us within <strong className="text-red-600">{contactWithinDaysDamage} days</strong> of delivery with your order number and photographic evidence of the damage. We will work with you and the carrier to resolve the issue.
         </p>
         <p>
-           If your order tracking shows delivered, but you haven't received it, please first check with neighbours or building security. If it's still missing, contact us within [Number, e.g., 5] days of the indicated delivery date. We will initiate an investigation with the courier partner. Please note that investigations can take time, and we cannot guarantee a replacement or refund for packages confirmed as delivered by the carrier to the correct address.
+           If your order tracking shows delivered, but you haven't received it, please first check with neighbours or building security. If it's still missing, contact us within 2 days of the indicated delivery date. We will initiate an investigation with the courier partner. Please note that investigations can take time, and we cannot guarantee a replacement or refund for packages confirmed as delivered by the carrier to the correct address.
         </p>
       </section>
 

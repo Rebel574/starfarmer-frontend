@@ -1,5 +1,11 @@
-const TermsOfService = () => {
-  const lastUpdated = 'April 14, 2025'; // Update this date
+import React, { useEffect } from 'react';
+
+const TermsOfService: React.FC = () => {
+  const lastUpdated = 'April 14, 2025';
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="bg-white text-gray-800 p-6 md:p-10 max-w-4xl mx-auto my-8 rounded-lg shadow-md">
@@ -11,10 +17,13 @@ const TermsOfService = () => {
       <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">1. Agreement to Terms</h2>
         <p className="mb-3">
-          These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and StarFarmer ("we," "us," or "our"), concerning your access to and use of the [Your Website URL] website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).
+          These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and StarFarmer, concerning your access to and use of the website as well as any other media form, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).
         </p>
         <p className="mb-3">
-          You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms of Service. **IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF SERVICE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.**
+          You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms of Service.{' '}
+          <strong className="text-red-600">
+            IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF SERVICE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+          </strong>
         </p>
         <p>
           Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms of Service at any time and for any reason.
@@ -23,18 +32,18 @@ const TermsOfService = () => {
 
       <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">2. Use of the Site & Product Information</h2>
-         <p className="mb-3">
-          The Site provides an online retail store for farm-related medicines, pesticides, fertilizers, seeds, and other related goods ("Products").
-         </p>
-         <p className="mb-3">
-           <strong>Eligibility:</strong> You must be at least 18 years of age to use this Site and purchase Products, particularly regulated items like pesticides and certain medicines. By using the Site, you represent and warrant that you meet this age requirement and that you will comply with all applicable local, state, national, and international laws and regulations regarding the purchase, possession, and use of the Products.
-         </p>
-         <p className="mb-3">
-           <strong>Product Descriptions:</strong> We strive to be as accurate as possible in descriptions of Products. However, we do not warrant that Product descriptions or other content is accurate, complete, reliable, current, or error-free. Information provided is often based on manufacturer specifications.
-         </p>
-         <p className="mb-3 font-semibold text-red-600">
-           <strong>Safety and Compliance (Crucial):</strong> You are solely responsible for the safe handling, storage, application, and disposal of Products purchased, especially pesticides and chemicals. Always read and strictly follow the manufacturer's label instructions, safety precautions, and usage guidelines. You are responsible for ensuring that you are legally permitted to purchase and use the Products in your specific location and for your intended purpose. We are not liable for misuse, improper application, failure to follow instructions, or non-compliance with regulations.
-         </p>
+        <p className="mb-3">
+          The Site provides an online retail store for <strong>Agri-related</strong> goods ("Products").
+        </p>
+        <p className="mb-3">
+          <strong>Eligibility:</strong> You must be at least 18 years of age to use this Site and purchase Products, particularly regulated items like pesticides and certain medicines. By using the Site, you represent and warrant that you meet this age requirement and that you will comply with all applicable local, state, national, and international laws and regulations regarding the purchase, possession, and use of the Products.
+        </p>
+        <p className="mb-3">
+          <strong>Product Descriptions:</strong> We strive to be as accurate as possible in descriptions of Products. However, we do not warrant that Product descriptions or other content is accurate, complete, reliable, current, or error-free. Information provided is often based on manufacturer specifications.
+        </p>
+        <p className="mb-3 font-semibold text-red-600">
+          <strong>Safety and Compliance (Crucial):</strong> You are solely responsible for the safe handling, storage, application, and disposal of Products purchased, especially pesticides and chemicals. Always read and strictly follow the manufacturer's label instructions, safety precautions, and usage guidelines. You are responsible for ensuring that you are legally permitted to purchase and use the Products in your specific location and for your intended purpose. We are not liable for misuse, improper application, failure to follow instructions, or non-compliance with regulations.
+        </p>
       </section>
 
       <section className="mb-6">
@@ -47,19 +56,19 @@ const TermsOfService = () => {
       <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">4. Purchases and Payment</h2>
         <p className="mb-3">
-          We accept the following forms of payment: [List Payment Methods, e.g., Credit/Debit Cards, Net Banking, UPI via Razorpay/PayU]. You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Site. Sales tax or other applicable taxes (like GST in India) will be added to the price of purchases as deemed required by us or law. All payments shall be in Indian Rupees (INR).
+          We accept the following forms of payment: PhonePe, Razorpay. You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Site. Sales tax or other applicable taxes (like GST in India) will be added to the price of purchases as deemed required by us or law. All payments shall be in Indian Rupees (INR).
         </p>
         <p className="mb-3">
           We reserve the right to refuse any order placed through the Site. We may, in our sole discretion, limit or cancel quantities purchased per person, per household, or per order.
         </p>
       </section>
 
-       <section className="mb-6">
+      <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">5. Shipping and Delivery</h2>
         <p className="mb-3">
           Please review our Shipping Policy, posted on the Site, which is incorporated into these Terms of Service. We are not responsible for delays caused by the shipping carrier or customs clearance (if applicable). Risk of loss and title for items purchased pass to you upon our delivery to the carrier.
         </p>
-         <p className="mb-3">
+        <p className="mb-3">
           Shipping restrictions may apply to certain Products (e.g., hazardous materials, pesticides) based on destination and regulations. It is your responsibility to ensure compliance.
         </p>
       </section>
@@ -91,9 +100,9 @@ const TermsOfService = () => {
           THE SITE AND PRODUCTS ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
         </p>
         <p className="mb-3 font-semibold text-red-600">
-           WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SITE’S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE SITE. WE ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SITE OR PRODUCTS (INCLUDING DAMAGES FROM MISUSE, IMPROPER APPLICATION, OR FAILURE TO FOLLOW SAFETY GUIDELINES FOR PESTICIDES AND CHEMICALS), (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SITE, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SITE BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE.
+          WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SITE’S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE SITE. WE ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SITE OR PRODUCTS (INCLUDING DAMAGES FROM MISUSE, IMPROPER APPLICATION, OR FAILURE TO FOLLOW SAFETY GUIDELINES FOR PESTICIDES AND CHEMICALS), (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SITE, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SITE BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE.
         </p>
-         <p className="mb-3">
+        <p className="mb-3">
           OUR LIABILITY SHALL BE LIMITED TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, AND IN NO EVENT SHALL OUR AGGREGATE LIABILITY EXCEED THE AMOUNT PAID BY YOU, IF ANY, FOR THE PRODUCTS GIVING RISE TO THE CLAIM.
         </p>
       </section>
@@ -108,13 +117,13 @@ const TermsOfService = () => {
       <section className="mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">11. Governing Law</h2>
         <p className="mb-3">
-          These Terms of Service and your use of the Site are governed by and construed in accordance with the laws of India, applicable to agreements made and to be entirely performed within India, without regard to its conflict of law principles. Any legal action or proceeding shall be brought exclusively in the courts located in [Your City/Jurisdiction, e.g., Pune, Maharashtra], India.
+          These Terms of Service and your use of the Site are governed by and construed in accordance with the laws of India, applicable to agreements made and to be entirely performed within India, without regard to its conflict of law principles. Any legal action or proceeding shall be brought exclusively in the courts located in Pune, Maharashtra, India.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl md:text-2xl font-semibold text-green-600 mb-3">12. Contact Us</h2>
-         <p>
+        <p>
           In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
           <br />
           StarFarmer
