@@ -1,28 +1,18 @@
 import  { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, ShoppingCart , LogIn} from 'lucide-react';
 import { useCartStore } from '../store/cartStore';
 import { getProduct } from '../api';
-
-interface Product {
-  _id: string;
-  name: { en: string; mr: string; _id?: string };
-  description: { en: string; mr: string; _id?: string };
-  benefits: { en: string; mr: string; _id?: string }[];
-  price: number;
-  discountedPrice?: number;
-  image: string;
-  category: string;
-  createdAt?: string;
-  __v?: number;
-}
+import { Product } from '@/common/types';
+import { useAuthStore } from '../store/authStore';
 
 export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [quantity, setQuantity] = useState(1);
+  const { isAuthenticated } = useAuthStore();
   const addItem = useCartStore((state) => state.addItem);
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
@@ -54,18 +44,33 @@ export default function ProductDetails() {
     }
   };
 
-  const handleAddToCart = () => {
-    if (product) {
-      const itemToAdd = {
-        ...product,
-        discountedPrice: product.discountedPrice ?? product.price,
-      };
-      for (let i = 0; i < quantity; i++) {
-        addItem(itemToAdd);
+  // const handleAddToCart = () => {
+  //   if (product) {
+  //     const itemToAdd = {
+  //       ...product,
+  //       discountedPrice: product.discountedPrice ?? product.price,
+  //     };
+  //     for (let i = 0; i < quantity; i++) {
+  //       addItem(itemToAdd);
+  //     }
+  //   }
+  // };
+  const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+      e.stopPropagation(); // Prevent navigating to product details when clicking button
+      if (!isAuthenticated) {
+        navigate('/auth');
+        return;
       }
-    }
+      if (product) {
+        const itemToAdd = {
+          ...product,
+          discountedPrice: product.discountedPrice ?? product.price,
+        };
+        for (let i = 0; i < quantity; i++) {
+          addItem(itemToAdd);
+        }
+      }
   };
-  
 
   if (loading) {
     return (
@@ -151,17 +156,25 @@ export default function ProductDetails() {
           </div>
 
           {/* Benefits */}
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">{t('productDetails.benefits')}</h2>
-            <ul className="list-disc list-inside text-gray-600">
-              {product.benefits.map((benefit) => (
-                <li key={benefit._id || benefit.en}>
-                  {benefit[currentLang] || benefit.en}
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          {product.benefits && product.benefits.length > 0 && ( // Check benefits exist
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold mb-3 text-gray-800">{t('productDetails.benefits', 'Benefits')}</h2>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {product.benefits.map((benefit, index) => {
+                    const benefitText = (currentLang === 'en' || currentLang === 'mr') && benefit[currentLang]
+                                        ? benefit[currentLang]
+                                        : benefit.en; // Fallback to English
+                    return (
+                      // Use index as key since benefit objects lack a unique ID
+                      <li key={index}>
+                        {benefitText}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+          )}
+          {/* === End Benefits Section === */}
           {/* Quantity */}
           <div className="flex items-center gap-4 mb-6">
             <span className="text-gray-700">{t('productDetails.quantity')}:</span>
@@ -184,11 +197,21 @@ export default function ProductDetails() {
 
           {/* Add to Cart */}
           <button
-            onClick={handleAddToCart}
+            onClick={(e) => handleAddToCart(e, product)}
             className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 flex items-center justify-center"
           >
-            <ShoppingCart className="h-5 w-5 mr-2" />
-            {t('productDetails.addToCart')}
+           {isAuthenticated ? (
+              <>
+                <ShoppingCart className="h-5 w-5 mr-2" />
+                {t('products.addToCart')}
+              </>
+            ) : (
+              <>
+                  {/* Suggest login instead of showing cart icon */}
+                <LogIn className="h-5 w-5 mr-2" />
+                  {t('products.loginToAdd')} {/* Changed text */}
+              </>
+            )}
           </button>
         </div>
       </div>

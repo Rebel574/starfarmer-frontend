@@ -110,5 +110,131 @@
     "total": "एकूण",
     "proceedToCheckout": "चेकआउट करा",
     "checkoutAlert": "चेकआउटची प्रक्रिया Stripe सह एकत्र केली जाईल"
+  },
+  "checkoutSuccess": {
+    "title": "पेमेंट यशस्वी!",
+    "processing": "तुमची ऑर्डर प्रक्रिया केली जात आहे",
+    "verifying": "तुमचे पेमेंट तपासले जात आहे",
+    "pleaseWait": "कृपया थांबा, आम्ही तुमचे पेमेंट पुष्टी करत आहोत...",
+    "error": "पेमेंट तपासणी अयशस्वी",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "redirecting": "थोड्याच वेळात तुम्हाला तुमच्या ऑर्डर तपशीलांकडे वळवले जाईल..."
+  },
+  "orderSuccess": {
+    "title": "ऑर्डर यशस्वी!",
+    "thankYou": "तुमच्या ऑर्डरसाठी धन्यवाद.",
+    "orderNumber": "ऑर्डर क्रमांक",
+    "confirmationEmailSent": "तुमच्या नोंदणीकृत ईमेल पत्त्यावर एक पुष्टीकरण ईमेल पाठविला आहे.",
+    "orderDetails": "ऑर्डर तपशील",
+    "orderPlaced": "ऑर्डर दिली",
+    "status": {
+      "payment_pending": "पेमेंट प्रलंबित",
+      "processing": "प्रक्रिया करत आहे",
+      "completed": "पूर्ण झाले",
+      "delivered": "वितरीत",
+      "shipped": "पाठवले",
+      "cancelled": "रद्द केले"
+    },
+    "qty": "नग",
+    "item": "वस्तू",
+    "subtotal": "उप-एकूण",
+    "shipping": "शिपिंग",
+    "free": "मोफत",
+    "total": "एकूण",
+    "deliveryInformation": "वितरण माहिती",
+    "shippingAddress": "शिपिंग पत्ता",
+    "phoneAbbr": "फोन",
+    "paymentMethod": "पेमेंटची पद्धत",
+    "paymentMethods": {
+      "cod": "वितरणावर रोख",
+      "online": "ऑनलाइन पेमेंट"
+    },
+    "paymentReceived": "पेमेंट प्राप्त झाले",
+    "continueShopping": "खरेदी सुरू ठेवा",
+    "viewMyOrders": "माझ्या ऑर्डर्स पहा",
+    "errors": {
+      "missingId": "ऑर्डर आयडी गहाळ आहे.",
+      "notFound": "ऑर्डर सापडली नाही.",
+      "loadFailed": "ऑर्डर तपशील लोड करण्यात अयशस्वी.",
+      "invalidDate": "अवैध तारीख"
+    },
+    "unknownProduct": "अज्ञात उत्पादन"
+  },
+  "orders": {
+    "myOrders": "माझ्या ऑर्डर्स",
+    "filters": {
+      "allStatus": "सर्व स्थिती",
+      "paymentPending": "पेमेंट प्रलंबित",
+      "processing": "प्रक्रिया करत आहे",
+      "shipped": "पाठवले",
+      "delivered": "वितरीत",
+      "completed": "पूर्ण झाले",
+      "cancelled": "रद्द केले",
+      "paymentFailed": "पेमेंट अयशस्वी"
+    },
+    "noOrdersFound": "ऑर्डर्स आढळल्या नाहीत",
+    "noOrdersDescription": "तुम्ही अजून कोणतीही ऑर्डर दिलेली नाही.",
+    "orderId": "ऑर्डर आयडी",
+    "date": "तारीख",
+    "status": "स्थिती",
+    "total": "एकूण",
+    "orderItems": "ऑर्डर केलेल्या वस्तू",
+    "paymentMethod": "पेमेंटची पद्धत",
+    "paymentStatus": "पेमेंटची स्थिती",
+    "statuses": {
+      "payment_pending": "पेमेंट प्रलंबित",
+      "processing": "प्रक्रिया करत आहे",
+      "shipped": "पाठवले",
+      "delivered": "वितरीत",
+      "completed": "पूर्ण झाले",
+      "cancelled": "रद्द केले",
+      "payment_failed": "पेमेंट अयशस्वी"
+    },
+    "paymentMethods": {
+      "cod": "वितरणावर रोख",
+      "online": "ऑनलाइन पेमेंट"
+    },
+    "paymentStatuses": {
+      "paid": "भरले",
+      "pending": "प्रलंबित",
+      "failed": "अयशस्वी",
+      "notApplicable": "लागू नाही"
+    },
+    "fetchError": "ऑर्डर्स मिळवण्यात अयशस्वी.",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "unknownProduct": "अज्ञात उत्पादन"
+  },
+  "checkout": {
+    "title": "चेकआउट",
+    "errors": {
+      "userNotFound": "वापरकर्ता प्रमाणित नाही.",
+      "cartEmpty": "तुमचे कार्ट रिक्त आहे.",
+      "generic": "चेकआउट दरम्यान एक त्रुटी आली.",
+      "phonepeUrlMissing": "फोनपे पेमेंट URL मिळवण्यात अयशस्वी.",
+      "orderCreationFailed": "ऑर्डर तयार करण्यात अयशस्वी."
+    },
+    "shippingAddress": "शिपिंग पत्ता",
+    "fullName": "पूर्ण नाव",
+    "phone": "फोन नंबर",
+    "addressLine1": "पत्ता ओळ 1",
+    "addressLine2": "पत्ता ओळ 2",
+    "optional": "(वैकल्पिक)",
+    "city": "शहर",
+    "state": "राज्य",
+    "pincode": "पिनकोड",
+    "paymentMethod": "पेमेंटची पद्धत",
+    "onlinePayment": "ऑनलाइन पेमेंट",
+    "cashOnDelivery": "वितरणावर रोख",
+    "freeShipping": "मोफत शिपिंग",
+    "free": "मोफत",
+    "shippingFee": "शिपिंग शुल्क",
+    "shipping": "शिपिंग",
+    "orderSummary": "ऑर्डर सारांश",
+    "cartEmpty": "तुमचे कार्ट रिक्त आहे.",
+    "subtotal": "उप-एकूण",
+    "total": "एकूण",
+    "processing": "प्रक्रिया करत आहे...",
+    "placeOrder": "ऑर्डर करा",
+    "unknownProduct": "अज्ञात उत्पादन"
   }
 }

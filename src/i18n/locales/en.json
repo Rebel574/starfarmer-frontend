@@ -110,5 +110,131 @@
   "total": "Total",
   "proceedToCheckout": "Proceed to Checkout",
   "checkoutAlert": "Checkout functionality would be integrated with Stripe here"
+  },
+  "checkoutSuccess": {
+    "title": "Payment Successful!",
+    "processing": "Your order is being processed",
+    "verifying": "Verifying Your Payment",
+    "pleaseWait": "Please wait while we confirm your payment...",
+    "error": "Payment Verification Failed",
+    "tryAgain": "Try Again",
+    "redirecting": "You will be redirected to your order details shortly..."
+  }  ,
+  "orderSuccess": {
+    "title": "Order Successful!",
+    "thankYou": "Thank you for your order.",
+    "orderNumber": "Order Number",
+    "confirmationEmailSent": "A confirmation email has been sent to your registered email address.",
+    "orderDetails": "Order Details",
+    "orderPlaced": "Order Placed",
+    "status": {
+      "payment_pending": "Payment Pending",
+      "processing": "Processing",
+      "completed": "Completed",
+      "delivered": "Delivered",
+      "shipped": "Shipped",
+      "cancelled": "Cancelled"
+    },
+    "qty": "Qty",
+    "item": "item",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "deliveryInformation": "Delivery Information",
+    "shippingAddress": "Shipping Address",
+    "phoneAbbr": "Ph",
+    "paymentMethod": "Payment Method",
+    "paymentMethods": {
+      "cod": "Cash on Delivery",
+      "online": "Online Payment"
+    },
+    "paymentReceived": "Payment Received",
+    "continueShopping": "Continue Shopping",
+    "viewMyOrders": "View My Orders",
+    "errors": {
+      "missingId": "Order ID is missing.",
+      "notFound": "Order not found.",
+      "loadFailed": "Failed to load order details.",
+      "invalidDate": "Invalid Date"
+    },
+    "unknownProduct": "Unknown Product"
+  },
+  "orders": {
+    "myOrders": "My Orders",
+    "filters": {
+      "allStatus": "All Statuses",
+      "paymentPending": "Payment Pending",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "paymentFailed": "Payment Failed"
+    },
+    "noOrdersFound": "No Orders Found",
+    "noOrdersDescription": "You haven't placed any orders yet.",
+    "orderId": "Order ID",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "orderItems": "Order Items",
+    "paymentMethod": "Payment Method",
+    "paymentStatus": "Payment Status",
+    "statuses": {
+      "payment_pending": "Payment Pending",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "payment_failed": "Payment Failed"
+    },
+    "paymentMethods": {
+      "cod": "Cash on Delivery",
+      "online": "Online Payment"
+    },
+    "paymentStatuses": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "failed": "Failed",
+      "notApplicable": "N/A"
+    },
+    "fetchError": "Failed to fetch orders.",
+    "tryAgain": "Try Again",
+    "unknownProduct": "Unknown Product"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "errors": {
+      "userNotFound": "User not authenticated.",
+      "cartEmpty": "Your cart is empty.",
+      "generic": "An error occurred during checkout.",
+      "phonepeUrlMissing": "Failed to get PhonePe payment URL.",
+      "orderCreationFailed": "Failed to create order."
+    },
+    "shippingAddress": "Shipping Address",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "addressLine1": "Address Line 1",
+    "addressLine2": "Address Line 2",
+    "optional": "(Optional)",
+    "city": "City",
+    "state": "State",
+    "pincode": "Pincode",
+    "paymentMethod": "Payment Method",
+    "onlinePayment": "Online Payment",
+    "cashOnDelivery": "Cash on Delivery",
+    "freeShipping": "Free Shipping",
+    "free": "Free",
+    "shippingFee": "Shipping Fee",
+    "shipping": "Shipping",
+    "orderSummary": "Order Summary",
+    "cartEmpty": "Your cart is empty.",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "processing": "Processing...",
+    "placeOrder": "Place Order",
+    "unknownProduct": "Unknown Product"
   }
 }

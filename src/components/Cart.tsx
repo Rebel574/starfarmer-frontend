@@ -4,15 +4,16 @@ import { useCartStore } from '../store/cartStore';
 import { useAuthStore } from '../store/authStore'; 
 import { useTranslation } from 'react-i18next'; 
 import { Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe('your_publishable_key');
 
 export default function Cart() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthStore();
   const { items, removeItem, updateQuantity, total } = useCartStore();
   const { i18n, t } = useTranslation();
+  const handleProceedToCheckout = () => {
+    // Optional: Add checks here if needed (e.g., is cart empty? Although Checkout also checks)
+    navigate('/checkout'); // 4. Navigate to the checkout route path
+  };
 
   React.useEffect(() => {
     if (!isAuthenticated) {
@@ -20,14 +21,6 @@ export default function Cart() {
     }
   }, [isAuthenticated, navigate]);
 
-  const handleCheckout = async () => {
-    const stripe = await stripePromise;
-    if (!stripe) {
-      console.error("Stripe.js hasn't loaded yet.");
-      return;
-    }
-    alert(t('cart.checkoutAlert'));
-  };
 
   if (!isAuthenticated) {
     return null;
@@ -71,7 +64,7 @@ export default function Cart() {
                   />
                   <div className="ml-4 flex-grow">
                     <h3 className="text-lg font-semibold text-gray-900">{displayName}</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">₹{item.price}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">₹{item.discountedPrice}</p>
                   </div>
                 </div>
                 <div className="flex items-center w-full sm:w-auto justify-between sm:justify-end">
@@ -109,9 +102,10 @@ export default function Cart() {
             <span className="text-2xl font-bold text-gray-900">₹{total()}</span>
           </div>
           <button
-            onClick={handleCheckout}
+            onClick={handleProceedToCheckout} // 5. Attach the handler
             className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-200"
-            disabled={!stripePromise}
+            // Optional: Disable button if cart is empty
+            disabled={items.length === 0}
           >
             {t('cart.proceedToCheckout')}
           </button>

@@ -5,20 +5,9 @@ import { useAuthStore } from '../store/authStore';
 import { ShoppingCart, Search, Plus, LogIn } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getProducts } from '../api';
+import placeholderImageSrc from '../assets/No-Image-Placeholder.svg';
+import { Product } from '@/common/types';
 
-// Interface remains the same
-interface Product {
-  _id: string;
-  name: { en: string; mr: string; _id?: string };
-  description: { en: string; mr: string; _id?: string };
-  benefits: { en: string; mr: string; _id?: string }[];
-  price: number;
-  discountedPrice: number;
-  image: string;
-  category: string;
-  createdAt?: string;
-  __v?: number;
-}
 
 export default function ProductList() {
   const { t, i18n } = useTranslation();
@@ -186,13 +175,22 @@ export default function ProductList() {
                 >
                   {/* Image Container with Aspect Ratio */}
                   <div className="aspect-square w-full overflow-hidden">
-                    <img
-                      src={product.image || '/placeholder-image.png'} // Add a fallback placeholder
-                      alt={displayName}
-                      className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                      // Add basic error handling for images
-                      onError={(e) => (e.currentTarget.src = '/placeholder-image.png')}
-                    />
+                  <img
+                    src={product.image || placeholderImageSrc}
+                    alt={displayName}
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    onError={(e) => {
+                      const currentTarget = e.currentTarget;
+                      // Only set the placeholder if the failing source wasn't already the placeholder
+                      if (currentTarget.src !== placeholderImageSrc) {
+                        currentTarget.src = placeholderImageSrc;
+                      } else {
+                        // Optional: Log if the placeholder itself fails and prevent further attempts
+                        // console.error('Imported placeholder image failed to load:', placeholderImageSrc);
+                        currentTarget.onerror = null;
+                      }
+                    }}
+                  />
                   </div>
                   {/* Text Content */}
                   <div className="p-4"> {/* Adjusted padding */}

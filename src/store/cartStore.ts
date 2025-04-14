@@ -1,19 +1,24 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { fetchCart, syncCart } from '../api/index.ts'; // adjust the path if needed
+import { fetchCart, syncCart } from '../api/index.ts';
 
+// Import types from common types file
+import { Product as ProductType} from '../common/types';
 
-interface Product {
+// Local interface for cart items as used in the store
+interface CartItem {
   _id: string;
-  name: { en: string; mr: string };
+  name: {
+    en: string;
+    mr: string;
+  };
   price: number;
   discountedPrice: number;
   image: string;
-  description?: { en: string; mr: string };
-  category?: string;
-  benefits?: { en: string; mr: string }[];
+  quantity: number;
 }
 
+// Server response type
 interface ServerCartItem {
   productId: {
     _id: string;
@@ -28,24 +33,11 @@ interface ServerCartItem {
   quantity: number;
 }
 
-interface CartItem {
-  _id: string;
-  name: {
-    en: string;
-    mr: string;
-  };
-  price: number;
-  discountedPrice: number;
-  image: string;
-  quantity: number;
-}
-
-
 interface CartStore {
   items: CartItem[];
   token?: string;
   setToken: (token?: string) => void;
-  addItem: (product: Product) => void;
+  addItem: (product: ProductType) => void;
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -137,7 +129,10 @@ export const useCartStore = create<CartStore>()(
             const res = await fetchCart();
             const json = res.data;
         
-            const populatedItems: CartItem[] = json.data.items.map((entry: ServerCartItem) => ({
+            // Check for different response structures
+            const serverItems = json.data?.items || json.items || [];
+            
+            const populatedItems: CartItem[] = serverItems.map((entry: ServerCartItem) => ({
               _id: entry.productId._id,
               name: entry.productId.name,
               price: entry.productId.price,
@@ -163,7 +158,8 @@ export const useCartStore = create<CartStore>()(
               quantity: item.quantity,
             }));
         
-            await syncCart(formatted, token); 
+            // Remove the token parameter since the API function doesn't expect it directly
+            await syncCart(formatted);
           } catch (error) {
             console.error('Saving cart failed:', error);
           }
