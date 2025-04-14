@@ -6,6 +6,8 @@ import { useCartStore } from '../store/cartStore';
 import { getProduct } from '../api';
 import { Product } from '@/common/types';
 import { useAuthStore } from '../store/authStore';
+import placeholderImageSrc from '../assets/No-Image-Placeholder.svg';
+
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -117,10 +119,21 @@ export default function ProductDetails() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Image */}
         <div>
-          <img
-            src={product.image}
+        <img
+            src={product.image || placeholderImageSrc}
             alt={displayName}
-            className="w-full rounded-lg shadow-lg object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+            onError={(e) => {
+              const currentTarget = e.currentTarget;
+              // Only set the placeholder if the failing source wasn't already the placeholder
+              if (currentTarget.src !== placeholderImageSrc) {
+                currentTarget.src = placeholderImageSrc;
+              } else {
+                // Optional: Log if the placeholder itself fails and prevent further attempts
+                // console.error('Imported placeholder image failed to load:', placeholderImageSrc);
+                currentTarget.onerror = null;
+              }
+            }}
           />
         </div>
 
