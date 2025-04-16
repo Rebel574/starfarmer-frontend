@@ -147,8 +147,8 @@ function App() {
                     alt="Star Farmer Logo"
                     className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
                   />
-                  <span className="ml-2 text-xl sm:text-2xl lg:text-3xl font-extrabold text-green-600 tracking-wide drop-shadow-sm font-sans">
-                    Star <span className="text-emerald-500">Farmer</span>
+                  <span className="ml-2 text-xl sm:text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-green-600 via-emerald-500 to-lime-500 text-transparent bg-clip-text tracking-wide drop-shadow-sm">
+                    Star Farmer
                   </span>
                 </Link>
 
