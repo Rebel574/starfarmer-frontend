@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'; // Import useRef
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-import { Plane as Plant, ShoppingCart, User, LogOut, Menu, X, Archive } from 'lucide-react';
+import { ShoppingCart, User, LogOut, Menu, X, Archive } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Logo from './assets/Logo.png'
 
 import { useCartStore } from './store/cartStore';
 import { useAuthStore } from './store/authStore';
@@ -141,7 +142,7 @@ function App() {
               <div className="flex justify-between h-16 items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center flex-shrink-0" onClick={closeMobileMenu}>
-                  <Plant className="h-8 w-8 text-green-600" />
+                  <img src={Logo} alt="Star Farmer Logo" className="h-8 w-8" />
                   <span className="ml-2 text-xl font-bold text-green-600">Star Farmer</span>
                 </Link>
 

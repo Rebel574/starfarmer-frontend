@@ -121,9 +121,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Star Farmer. All rights reserved.
-            </p>
+            <div className="text-center md:text-left mb-4 md:mb-0">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Star Farmer. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-xs">
+                Powered by: Rohit Nagtilak
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               <Link to="/privacy" className="text-gray-400 hover:text-green-500 text-sm">
                 Privacy Policy

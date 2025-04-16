@@ -267,8 +267,6 @@ export default function Auth() {
                     // Consider adding theme, shape, etc. customizations if needed
                   />
                </div>
-               {/* GitHub Button (Still present but disabled as per original code) */}
-               {/* ... */}
             </div>
              {/* ... Toggle Login/Register Link ... (Unchanged) */}
              <div className="text-center"><button type="button" onClick={() => { setIsLogin(!isLogin); setError(''); setSuccessMessage(''); setShowResendVerification(false); setShowForgotPassword(false); /* Consider clearing form fields on toggle? */ }} className="text-sm text-green-600 hover:text-green-500">{isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}</button></div>

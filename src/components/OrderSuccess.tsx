@@ -389,7 +389,7 @@ export default function OrderSuccess(): JSX.Element {
         </Link>
         {/* Secondary Button: View Orders */}
         <Link
-          to="/my-orders" // Or potentially `/my-orders/${order._id}` if you have a specific order view
+          to="/my-orders"
           className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition duration-150 ease-in-out order-1 sm:order-2"
         >
           <ListOrdered className="h-4 w-4 mr-2"/>
