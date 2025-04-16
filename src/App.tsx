@@ -142,8 +142,14 @@ function App() {
               <div className="flex justify-between h-16 items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center flex-shrink-0" onClick={closeMobileMenu}>
-                  <img src={Logo} alt="Star Farmer Logo" className="h-8 w-8" />
-                  <span className="ml-2 text-xl font-bold text-green-600">Star Farmer</span>
+                  <img
+                    src={Logo}
+                    alt="Star Farmer Logo"
+                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+                  />
+                  <span className="ml-2 text-xl sm:text-2xl lg:text-3xl font-extrabold text-green-600 tracking-wide drop-shadow-sm font-sans">
+                    Star <span className="text-emerald-500">Farmer</span>
+                  </span>
                 </Link>
 
                 {/* Desktop Menu Links */}
