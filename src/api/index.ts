@@ -122,7 +122,7 @@ export interface GetOrderResponse {
 
 // --- Axios Instance ---
 const api = axios.create({
-  baseURL: 'https://starfarmer-frontend.onrender.com/api',
+  baseURL: 'https://starfarmer-backend.onrender.com/api',
   withCredentials: true,
 });
 
