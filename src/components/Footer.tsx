@@ -66,7 +66,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="flex items-center text-gray-400 hover:text-green-500">
+                <Link to="/contact-us" className="flex items-center text-gray-400 hover:text-green-500">
                   <Mail className="h-5 w-5 mr-2" />
                   <span>Contact Us</span>
                 </Link>

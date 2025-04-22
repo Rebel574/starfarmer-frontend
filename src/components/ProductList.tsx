@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { getProducts } from '../api';
 import placeholderImageSrc from '../assets/No-Image-Placeholder.svg';
 import { Product } from '@/common/types';
+import Banner from './Banner';
 
 
 export default function ProductList() {
@@ -99,7 +100,12 @@ export default function ProductList() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12"> {/* Adjusted padding */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12"> 
+      <Banner
+        message={t('banner.bulkOrder')}
+        linkText={t('banner.contactUs')}
+        linkTo="/contact-us"
+      />
       {/* Filter and Search Section */}
       <div className="mb-8">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">

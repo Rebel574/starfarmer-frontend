@@ -5,6 +5,10 @@
     "profile": "Profile",
     "admin": "Admin"
   },
+  "banner": {
+    "bulkOrder": "For bulk orders, please visit our",
+    "contactUs": "contact us page"
+  },
   "admin": {
     "title": "Admin Dashboard",
     "products": {
@@ -237,5 +241,29 @@
     "processing": "Processing...",
     "placeOrder": "Place Order",
     "unknownProduct": "Unknown Product"
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "name": "Your Name",
+    "email": "Your Email",
+    "queryType": "Type of Inquiry",
+    "selectQueryType": "Select a type of inquiry",
+    "queryTypes": {
+      "general": "General Inquiry",
+      "bulkOrder": "Bulk Order Inquiry",
+      "orderIssue": "Order Related Query",
+      "productIssue": "Product Related Issue"
+    },
+    "orderNumber": "Order Number (if applicable)",
+    "bulkOrderDetails": "Bulk Order Details",
+    "bulkOrderPlaceholder": "Please provide details about your bulk order requirements.",
+    "productIssueDetails": "Product Issue Details",
+    "productIssuePlaceholder": "Please describe the issue you are experiencing with the product.",
+    "subject": "Subject",
+    "message": "Your Message",
+    "submit": "Submit",
+    "submissionSuccess": "Your message has been sent successfully!",
+    "submissionError": "There was an error submitting your message. Please try again later.",
+    "queryTypePrefix": "Inquiry Type:"
   }
 }

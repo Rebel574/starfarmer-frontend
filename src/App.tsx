@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-ro
 import { ShoppingCart, User, LogOut, Menu, X, Archive } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import Logo from './assets/Logo.png'
+import Logo from './assets/LOGO.png'
 
 import { useCartStore } from './store/cartStore';
 import { useAuthStore } from './store/authStore';
@@ -29,6 +29,11 @@ import PrivacyPolicy from './components/policies/PrivacyPolicy';
 import TermsOfService from './components/policies/TermsOfService';
 import RefundPolicy from './components/policies/RefundPolicy';
 import ShippingPolicy from './components/policies/ShippingPolicy';
+import ContactUs from './components/pages/ContactUs';
+import Blog from './components/pages/Blog';
+import About from './components/pages/About';
+import Faq from './components/pages/Faq';
+import Careers from './components/pages/Careers';
 
 // --- Route Protection Components --- (Keep as they are)
 const AdminRoute = ({ children }: { children: React.ReactNode }) => {
@@ -295,7 +300,7 @@ function App() {
                 ) : (
                   <Link to="/auth" onClick={closeMobileMenu} className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-green-500">
                     <User className="h-5 w-5 mr-3 flex-shrink-0" />
-                    <span>{t('login')} / {t('signup')}</span>
+                    <span>{t('Login')} / {t('Signup')}</span>
                   </Link>
                 )}
 
@@ -326,6 +331,12 @@ function App() {
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/refund" element={<RefundPolicy />} />
               <Route path="/shipping" element={<ShippingPolicy />} />
+              <Route path="/contact-us" element={<ContactUs/>} />
+              <Route path="/faq" element={<Faq/>} />
+              <Route path="/careers" element={<Careers/>} />
+              <Route path="/about" element={<About/>} />
+              <Route path="/blog" element={<Blog/>} />
+
             </Routes>
           </main>
 

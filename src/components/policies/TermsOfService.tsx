@@ -4,7 +4,7 @@ const TermsOfService: React.FC = () => {
   const lastUpdated = 'April 14, 2025';
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
