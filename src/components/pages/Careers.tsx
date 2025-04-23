@@ -9,7 +9,7 @@ const Careers: React.FC = () => {
     <div className="relative min-h-screen w-full flex items-center justify-center bg-gray-50">
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-10 z-0"
-        style={{ backgroundImage: "url('src/assets/Logo.png')" }}
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dxjgp7tyl/image/upload/v1745382823/Logo_opcdzi.png')" }}
       />
       <div className="relative z-20 text-center px-6">
         <h1 className="text-4xl font-bold text-green-700 mb-4">Careers</h1>

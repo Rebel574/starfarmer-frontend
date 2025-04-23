@@ -39,7 +39,7 @@ const Faq: React.FC = () => {
     <div className="relative min-h-screen w-full flex items-center justify-center bg-gray-50">
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-10 z-0"
-        style={{ backgroundImage: "url('src/assets/Logo.png')" }}
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dxjgp7tyl/image/upload/v1745382823/Logo_opcdzi.png')" }}
       />
       <div className="relative z-20 max-w-4xl mx-auto px-6 py-10 text-gray-800">
         <h1 className="text-4xl font-bold text-teal-700 text-center mb-8">Frequently Asked Questions</h1>
